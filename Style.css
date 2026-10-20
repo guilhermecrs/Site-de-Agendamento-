@@ -1,0 +1,11 @@
+.btn-confirmar {
+  background-color: #d85695;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 10px;
+}
+.btn-confirmar:hover {
+  background-color: #bf4a82;
+  color: white;
+}

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="Style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <title>Estúdio de Cílios | Agendamento Online</title>
+</head>
+
+   <style> /*Toda parte do CSS*/
+  /* 1. Faz o Header flutuar com uma sombra suave no topo */
+  .navbar-fundido {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.2) 70%, transparent 100%) !important;
+  }
+  /* 2. Configura a Hero Section com a imagem de fundo e fusão em baixo */
+  .hero-fundida {
+    position: relative;
+    padding-top: 140px; /* Dá espaço para o texto não ficar coberto pelo nav */
+    padding-bottom: 100px;
+    background: url("IMG/ImagemHeader\ 2_rotated.jpg")center/cover no-repeat;
+    color: #ffffff;
+  }
+  /* 3. Escurece levemente o centro do banner para dar leitura nos textos */
+  .hero-fundida::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55); 
+    z-index: 1;
+  }
+  /* 4. O degradê mágico que funde a foto com o fundo lilás em baixo */
+  .hero-fundida::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 180px;
+    background: linear-gradient(to bottom, transparent, #E9D5FF);
+    z-index: 2;
+    background: linear-gradient(
+      to bottom, 
+      rgba(233, 213, 255, 0) 0%, 
+      rgba(233, 213, 255, 0.2) 60%, 
+      rgba(233, 213, 255, 1) 100%
+    );
+    z-index: 2;
+  }
+  /* Garante que o conteúdo fique visível acima das sombras */
+  .hero-fundida .container {
+    position: relative;
+    z-index: 3;
+  }
+
+/*Parte de Cards*/
+/* Efeito ao passar o mouse no Card de Serviço */
+.card-service {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-service:hover {
+  transform: translateY(-6px); /* Faz o card flutuar levemente */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12) !important;
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+  font-family: 'Playfair Display', serif;
+
+ 
+}
+
+.font-montserrat { font-family: 'Montserrat', sans-serif !important; }
+
+</style>
+
+<body style="background-color: #E9D5FF;">
+
+  <!-- NAVBAR FLUTUANTE / FUNDIDO -->
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-fundido">
+    <div class="container">
+      
+      <!-- Marca / Nome da Profissional -->
+     <a class="navbar-brand d-flex align-items-center gap-3" href="#">
+  
+  <!-- Foto de perfil redonda -->
+  <img 
+    src="IMG/LogoHeader.jpeg" 
+    alt="Anna Clara Gonçalves" 
+    class="rounded-circle shadow-sm"
+    style="width: 44px; height: 44px; object-fit: cover; border: 2px solid #E05297;"
+  >
+
+  <!-- Nome e Subtítulo -->
+  <div class="d-flex flex-column">
+    <span class="fw-bold fs-5 text-white lh-sm">Anna Clara Gonçalves</span>
+    <small class="fs-6 fw-normal font-montserrat" style= "color: #FF85C0;">Lash Designer</small>
+  </div>
+
+</a>
+
+      <!-- Botão Hambúrguer para Celular -->
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Links do Menu -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center gap-2 mt-3 mt-lg-0">
+          <li class="nav-item">
+            <a class="nav-link text-white fw-medium font-montserrat" href="#servicos">Procedimentos</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn fw-bold px-4 text-white btn-danger w-100 shadow-sm border-0" style="background-color: #E05297;" href="#agendamento">Agendar Horário</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>  
+
+  <!-- HERO SECTION (Sua foto com a fusão aplicada) -->
+  <header class="hero-section hero-fundida text-center">
+    <div class="container">
+      <h1 class="display-5 fw-bold text-shadow">A Praticidade de Acordar Pronta</h1>
+      <p class="lead mb-4 text-shadow">Extensão de cílios personalizada com praticidade e atendimento exclusivo.</p>
+      <a class="btn btn-lg px-4 rounded-pill fw-bold text-white shadow font-montserrat " style="background-color: #E05297;" data-bs-toggle="modal" 
+        data-bs-target="#modalAgendamento">Agende Agora</a>
+    </div>
+  </header>
+
+</body>
+  <section id="servicos" class="py-5"> <!--Parte dos Itens e preços-->
+    <div class="container">
+      <h2 class="text-center mb-4 fw-bold">Tipos de Cílios</h2>
+      
+      <div class="row g-4"><!--Dentro de uma Row vai vários Cards ou Col-->
+
+        <div class="col-md-4 mb-4"><!--Card 1-->
+          <div class="card card-service shadow h-100 border-1 overflow-hidden">
+            <div class="card-body text-center">
+              <img src="IMG/CapaBrasileiro.jpeg" class="card-img-top rounded-3" style="height: 140px; object-fit: cover;">
+              <div class="card-body text-center d-flex flex-column justify-content-between"></div>
+              <div>
+                <h5 class="card-title fw-bold text-dark">Volume Brasileiro</h5>
+                <p class="card-text text-muted small">Efeito marcante e leve com fios em formato Y. Proporciona um preenchimento elegante, textura entrelaçada e olhar naturalmente alinhado.</p>
+              </div>
+              <div>
+                <p class="fw-bold fs-4 mb-3 font-montserrat" style="color: #E05297">R$ 50,00</p>
+                <a href="#" class="btn btn-danger w-100 fw-bold border-0 font-montserrat" style="background-color: #E05297;">Agendar Horário</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+         <div class="col-md-4 mb-4"><!--Card 2-->
+          <div class="card card-service shadow h-100 border-1 overflow-hidden">
+            <div class="card-body text-center">
+              <img src="IMG/CapaEgipicio.jpeg" class="card-img-top rounded-3" style="height: 140px; object-fit: cover;">
+              <div class="card-body text-center d-flex flex-column justify-content-between"></div>
+              <div>
+                <h5 class="card-title fw-bold text-dark">Volume Egípicio</h5>
+                <p class="card-text text-muted small">Feito com fios em formato W (3D), entrega um volume intermediário denso e volumoso, garantindo profundidade e sofisticação ao olhar.</p>
+              </div>
+              <div>
+                <p class="fw-bold fs-4 mb-3 font-montserrat" style="color: #E05297;">R$ 60,00</p>
+                <a href="#" class="btn btn-danger w-100 fw-bold border-0 font-montserrat"  style="background-color: #E05297;" >Agendar Horário</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+         <div class="col-md-4 mb-4"><!--Card 3-->
+          <div class="card card-service shadow h-100 border-1 overflow-hidden">
+            <div class="card-body text-center">
+              <img src="IMG/ImagemHeader 2_rotated.jpg" class="card-img-top rounded-3" style="height: 140px; object-fit: cover;">
+              <div class="card-body text-center d-flex flex-column justify-content-between"></div>
+              <div>
+                <h5 class="card-title fw-bold text-dark">Volume Glamour</h5>
+                <p class="card-text text-muted small">Destaque máximo e alta densidade para quem ama cílios bem pretinhos, cheios e dramáticos. O toque final perfeito para um visual de impacto.</p>
+              </div>
+              <div>
+                <p class="fw-bold fs-4 mb-3 font-montserrat" style="color: #E05297;">R$ 70,00</p>
+                <a href="#" class="btn btn-danger w-100 fw-bold border-0 font-montserrat" style="background-color: #E05297;">Agendar Horário</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+          <div class="col-md-4 mb-4"><!--Card 5-->
+          <div class="card card-service shadow h-100 border-1 overflow-hidden">
+            <div class="card-body text-center">
+              <img src="IMG/ImagemHeader.jpeg" class="card-img-top rounded-3" style="height: 140px; object-fit: cover;">
+              <div class="card-body text-center d-flex flex-column justify-content-between"></div>
+              <div>
+                <h5 class="card-title fw-bold text-dark">Fox Eyes</h5>
+                <p class="card-text text-muted small ">Efeito "olhar de raposa" ou gatinho. Os fios crescem gradualmente em direção ao canto externo, alongando e levantando o olhar com sensualidade.</p>
+              </div>
+              <div> 
+                <p class="fw-bold fs-4 mb-3 font-montserrat" style="color: #E05297;">R$75,00</p>
+                <a href="#" class="btn btn-danger w-100 fw-bold border-0 font-montserrat" style="background-color: #E05297;">Agendar Horário</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+          
+           <div class="col-md-4 mb-4"><!--Card 5-->
+          <div class="card card-service shadow h-100 border-1 overflow-hidden">
+            <div class="card-body text-center">
+              <img src="IMG/CapaAnime.jpeg" class="card-img-top rounded-3" style="height: 140px; object-fit: cover;">
+              <div class="card-body text-center d-flex flex-column justify-content-between"></div>
+              <div>
+                <h5 class="card-title fw-bold text-dark">Volume Anime</h5>
+                <p class="card-text text-muted small">Inspirado no estilo das personagens de mangá/anime, intercala fios mais longos (picos) com mais curtos, criando um efeito despojado, moderno e cheio de personalidade.</p>
+              </div>
+              <div> 
+                <p class="fw-bold fs-4 mb-3 font-montserrat" style="color: #E05297;">R$ 85,00</p>
+                <a href="#" class="btn btn-danger w-100 fw-bold border-0 font-montserrat" style="background-color: #E05297;">Agendar Horário</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <section id="agendamento" class="py-5 bg-white">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="p-3 border rounded shadow-sm bg-light text-center">
+            <p class="text-muted py-5">[API de canlendário em construção e carregará aqui ]</p>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--Card de Agendamento-->
+<div class="modal fade border-1" id="modalAgendamento" tabindex="-1" aria-labelledby="modalAgendamentoLabel" aria-hidden="true" >
+  <div class="modal-dialog modal-dialog-centered ">
+    <div class="modal-content">
+      <div class="modal-header border-1 pb-0" style="background-color: #E9D5FF;">
+        <h5 class="modal-title fw-bold" id="modalAgendamentoLabel">Agendar Horário</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body border-1"  style="background-color: #E9D5FF;">
+        
+        <form id="formAgendamento">
+          <div class="mb-3">
+            <label for="nome" class="form-label text-muted fw-semibold">Nome Completo</label>
+            <input type="text" class="form-control" id="nome" required placeholder="Ex: Maria Silva">
+          </div>
+          
+          <!--<div class="mb-3">
+            <label for="email" class="form-label text-muted fw-semibold">E-mail</label>
+            <input type="email" class="form-control" id="email" required placeholder="Ex: maria@email.com">
+          </div>-->
+          
+          <div class="mb-3">
+            <label for="telefone" class="form-label text-muted fw-semibold">WhatsApp</label>
+            <input type="tel" class="form-control" id="telefone" required placeholder="(00) 00000-0000">
+          </div>
+          
+          <div class="row">
+            <div class="col-6 mb-3">
+              <label for="data" class="form-label text-muted fw-semibold">Data</label>
+              <input type="date" class="form-control" id="data" required>
+            </div>
+            <div class="col-6 mb-3">
+              <label for="horario" class="form-label text-muted fw-semibold">Horário</label>
+              <input type="time" class="form-control" id="horario" required>
+            </div>
+          </div>
+
+          <div class="d-grid mt-2">
+            <button type="submit" class="btn btn-confirmar" id="btnSubmit" style="background-color: green; color: #ffffff;">Confirmar Agendamento</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="Index.js"></script>
+</body>
+
+</html>
