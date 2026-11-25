@@ -1,5 +1,5 @@
 // Troque 'http://localhost:3000' pela URL do servidor onde seu Server.js for hospedado
-const API_BASE_URL = "https://seu-servidor-backend.onrender.com"; 
+const API_BASE_URL = "https://api-estudio-cilios.onrender.com"; 
 
 document.addEventListener("DOMContentLoaded", () => {
 
